@@ -1,8 +1,6 @@
-FROM n8nio/n8n:latest
+FROM docker.n8n.io/n8nio/n8n:latest
 
 USER root
-
-# Instalar ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 USER node
